@@ -7,7 +7,6 @@ var logger = require('morgan');
 const clinetRouter = require('./routes/clinet/clinetRouter')
 const apiRouter = require('./routes/api/apiRouter')
 
-
 var app = express();
 
 // view engine setup
@@ -18,14 +17,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public')));
 
 
 app.use('/',clinetRouter)
 app.use('/api',apiRouter)
 
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler`
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -39,7 +38,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('errorPage/error');
 });
 
 module.exports = app;

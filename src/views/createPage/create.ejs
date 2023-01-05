@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Page</title>
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+
+
+<body>
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/create-user " class="active">Create</a>
+    </div>
+
+    <div class="form-add-new">
+        <fieldset>
+            <legend> Add New User</legend>
+            <div class="input-group">
+                <label for="">Role: </label>
+                <input type="text" class="role">
+            </div>
+            <div class="input-group">
+                <label for="">Name: </label>
+                <input type="text" class="name">
+            </div>
+            <div class="input-group">
+                <label for="">NameJob: </label>
+                <input type="text" class="nameJob">
+            </div>
+            <div class="input-group">
+                <label for="">Status: </label>
+                <input type="text" class="status">
+            </div>
+            <div>
+                <button onclick='addTodoList()'>save</button>
+            </div>
+        </fieldset>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascripts/create.js"></script>
+
+</html>
