@@ -1,9 +1,14 @@
 const router = require('express').Router()
 const Task = require("../../models/Task")
+const {checkCustomerMiderwrere} = require ('../../miderwrere/customerMiderwrere')
 
 
+router.get('/login',(req,res)=>{
+    res.render('createPage/create')
+})
 
-router.get('/', async (req, res) => {
+
+router.get('/',checkCustomerMiderwrere,async (req, res) => {
     try {
         const result = await Task.find({})
         // console.log('>>>data : ', result);
@@ -14,9 +19,8 @@ router.get('/', async (req, res) => {
 
 })
 
-router.get('/create-user',(req,res)=>{
-    res.render('createPage/create')
-})
+
+
 
 module.exports = router
 

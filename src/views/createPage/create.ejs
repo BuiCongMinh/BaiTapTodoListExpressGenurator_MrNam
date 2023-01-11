@@ -14,30 +14,23 @@
 
     <div class="topnav">
         <a href="/">Home</a>
-        <a href="/create-user " class="active">Create</a>
+        <a href="/login" class="active">Login</a>
     </div>
 
     <div class="form-add-new">
         <fieldset>
-            <legend> Add New User</legend>
-            <div class="input-group">
-                <label for="">Role: </label>
-                <input type="text" class="role">
-            </div>
+            <legend> Login </legend>
+            
             <div class="input-group">
                 <label for="">Name: </label>
                 <input type="text" class="name">
             </div>
             <div class="input-group">
-                <label for="">NameJob: </label>
-                <input type="text" class="nameJob">
-            </div>
-            <div class="input-group">
-                <label for="">Status: </label>
-                <input type="text" class="status">
+                <label for="">Password: </label>
+                <input type="text" class="password">
             </div>
             <div>
-                <button onclick='addTodoList()'>save</button>
+                <button onclick='login()'>Login</button>
             </div>
         </fieldset>
     </div>

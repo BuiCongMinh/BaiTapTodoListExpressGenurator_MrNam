@@ -3,11 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const session = require('express-session')
 const clinetRouter = require('./routes/clinet/clinetRouter')
 const apiRouter = require('./routes/api/apiRouter')
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,9 +20,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './public')));
 
+// config session
+app.set('trust proxy', 1) // trust first proxy    
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // deploid lên mới để là true còn môi trường local thì đặt là false
+}))
 
+
+// config router 
+app.use('/api',apiRouter) 
 app.use('/',clinetRouter)
-app.use('/api',apiRouter)
+// #) lưu ý phải để apiRouter chạy hết trước
 
 
 // catch 404 and forward to error handler`

@@ -2,6 +2,7 @@ const Task = require("../models/Task")
 
 
 const getTodoList = async (req, res) => {
+    console.log(">>>getTodolist req.session:", req.session);
     const result = await Task.find({})
     return res.status(200).json(result)
 }
